@@ -1,0 +1,29 @@
+﻿@model Post
+
+@{
+    ViewData["Title"] = "Update";
+}
+
+<form asp-action="update" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="Title">Title</label>
+        <input asp-for="Title" class="form-control" placeholder="Title">
+    </div>
+    <div class="form-group">
+        <label asp-for="Description">Description</label>
+        <input asp-for="Description" class="form-control" placeholder="Description">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="RedirectURL">RedirectURL</label>
+        <input asp-for="RedirectURL" class="form-control" placeholder="RedirectURL">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ImageFile">ImageFile</label>
+        <input asp-for="ImageFile" class="form-control-file">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
+

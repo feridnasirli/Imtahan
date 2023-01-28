@@ -1,0 +1,32 @@
+﻿@model List<Post>
+@{
+    ViewData["Title"] = "Index";
+}
+<div>
+<a asp-action="create" asp-controller="post" class="btn btn-success">Create</a>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Image</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+      @foreach (var item in Model)
+        {
+    <tr>
+      <td>@item.Title</td>
+      <td>
+        <img style="width:100px" src="~/uploads/posts/@item.Image" >
+      </td>
+      <td>@item.Description</td>
+      <td>
+          <a asp-action="update" asp-controller="post" asp-route-id="@item.Id" class="btn btn-info">Update</a>
+          <a asp-action="delete" asp-controller="post" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+      </td>
+    </tr>
+        }
+    </tbody>
+</table>
